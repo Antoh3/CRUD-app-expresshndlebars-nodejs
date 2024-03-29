@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">New User</li>
+        <li class="breadcrumb-item active" aria-current="page">Edit User</li>
     </ol>
 </nav>
 
@@ -12,7 +12,8 @@
 </div>
 {{/if}}
 
-
-<form action="/adduser" method="POST" class="row g-3 needs-validate" novalidate>
+{{#each rows}}
+<form action="/edituser/{{this.id}}" method="POST" class="row g-3 needs-validate" novalidate>
     {{> user_form}}
 </form>
+{{/each}}
